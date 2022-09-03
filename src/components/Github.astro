@@ -1,0 +1,55 @@
+---
+import 'dotenv/config';
+//return json.data;
+const response = await fetch('https://api.github.com/graphql', {
+	method: 'POST',
+	headers: {
+		'Content-Type': 'application/json',
+		Authorization: `Bearer ${import.meta.env.GIT_BEARER_TOKEN}`
+	},
+	body: JSON.stringify({
+		query: `
+        query {
+				user(login: "jhalmu") {
+					avatarUrl
+					pinnedItems(first: 20, types: REPOSITORY) {
+						totalCount
+						nodes {
+							... on Repository {
+								id
+								name
+								createdAt
+								url
+								description
+								homepageUrl
+								isFork
+								languages(first: 10) {
+									nodes {
+										name
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+        `
+	})
+});
+
+const json = await response.json();
+const results = json.data;
+
+if (json.errors) {
+	console.log(json.errors);
+	throw new Error('Failed to fetch API');
+}
+const img = results.user.avatarUrl;
+const datax = results.user.pinnedItems.nodes;
+//as { id, avatarUrl, name, createdAt, description, homepageUrl, languages, url }
+//console.log(datax);
+---
+
+<p>
+	{datax.map((data: { name: String }) => <p>{data.name}</p>)}
+</p>

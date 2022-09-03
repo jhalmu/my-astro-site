@@ -1,38 +1,31 @@
 ---
-export interface Props {
-  title: string
-}
-import Hero from '@components/Hero.astro'
-import Navbar from '@components/Navbar.astro'
-import '@styles/styles.css'
-
-const { title } = Astro.props
+import Github from '@components/Github.astro';
+import Head from '@components/Head.astro';
+import Hero from '@components/Hero.astro';
+import Navbar from '@components/Navbar.astro';
+//import Weather from '@components/Weather.astro';
+//import Gitx from '@components/Gitx.astro';
+import '@styles/styles.css';
 ---
 
 <!DOCTYPE html>
-<html lang='fi'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta
-      name='viewport'
-      content='width=device-width'
-    />
-    <link
-      rel='icon'
-      type='image/svg+xml'
-      href='/favicon.svg'
-    />
-    <meta
-      name='generator'
-      content={Astro.generator}
-    />
-    <title>{title}</title>
-  </head>
-  <body>
-    <Navbar />
-    <Hero />
-    <main>
-      <slot />
-    </main>
-  </body>
+<html lang="fi">
+	<head>
+		<meta charset="utf-8" />
+		<Head />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+	</head>
+	<body>
+		<Navbar />
+
+		<Hero />
+
+		<Github />
+
+		<main>
+			<slot />
+		</main>
+	</body>
 </html>

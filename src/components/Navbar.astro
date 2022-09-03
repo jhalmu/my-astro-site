@@ -1,37 +1,29 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 ---
 
-<nav class='navbar'>
-  <ul class='nav-links'>
-    <li class='nav-item'>
-      <a href='/'><h1 class='h1 text-gradient'>stackoverlove.me</h1></a>
-    </li>
-    <li class='nav-item'>
-      <a href='#'
-        ><Icon
-          name='mdi:linkedin'
-          alt='LinkedIn'
-          width={25}
-        />
-      </a>
-    </li>
-    <li class='nav-item'>
-      <a href='#'
-        ><Icon
-          name='mdi:github'
-          alt='Github'
-          width={25}
-        />
-      </a>
-    </li>
-    <li class='nav-item'>
-      <a href='#'
-        ><Icon
-          name='mdi:account'
-          width={25}
-        />
-      </a>
-    </li>
-  </ul>
+<nav class="navbar">
+	<ul class="nav-links">
+		<li class="nav-item">
+			<a href="/"><h1 class="h1 text-gradient">stackoverlove.me</h1></a>
+		</li>
+		<li class="nav-item">
+			<a href="/about" title="about"><Icon name="mdi:about" width={25} /></a>
+		</li>
+		<li class="nav-item">
+			<a href="www.linkedin.com/in/juhahalmu" title="LinkedIn"
+				><Icon name="mdi:linkedin" alt="LinkedIn" width={25} />
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="https://twitter.com/jhalmu" title="Twitter"
+				><Icon name="mdi:twitter" alt="Twitter" width={25} />
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="https://github.com/jhalmu" title="GitHub"
+				><Icon name="mdi:github" alt="Github" width={25} />
+			</a>
+		</li>
+	</ul>
 </nav>
