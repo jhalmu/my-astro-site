@@ -1,9 +1,7 @@
 ---
 import Github from '@components/Github.astro';
 import Head from '@components/Head.astro';
-import Hero from '@components/Hero.astro';
 import Navbar from '@components/Navbar.astro';
-//import Weather from '@components/Weather.astro';
 //import Gitx from '@components/Gitx.astro';
 import '@styles/styles.css';
 ---
@@ -20,12 +18,33 @@ import '@styles/styles.css';
 	<body>
 		<Navbar />
 
-		<Hero />
-
-		<Github />
-
 		<main>
 			<slot />
 		</main>
+		<section class="section">
+			<div>
+				<Github />
+			</div>
+		</section>
+		<style>
+			main {
+				display: flex;
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 88%, 0 100%);
+				background-color: yellowgreen;
+				min-width: 60em;
+				min-height: 40em;
+				background-image: url('/Default.png');
+				background-size: 60em;
+				background-repeat: no-repeat;
+				background-position: right;
+				opacity: 70%;
+			}
+			.section {
+				display: flex;
+				flex-direction: column;
+				margin: 2em;
+				gap: 2em;
+			}
+		</style>
 	</body>
 </html>

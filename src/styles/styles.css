@@ -28,7 +28,7 @@ html:focus-within {
 	--astro-gradient: linear-gradient(0deg, #d84727ff, #da62c4);
 	/* FONT */
 	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-	--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+	--font-size-lg: clamp(1rem, 1.7vw + 1.2rem, 4rem);
 	--font-size-xl: clamp(0.25rem, 2.38vw + 1.85rem, 5rem);
 	--color-text: hsla(193, 69%, 88%, 1);
 	--color-bg: hsla(182, 83%, 9%, 1);

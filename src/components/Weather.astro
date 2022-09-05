@@ -28,3 +28,16 @@ const weather = json.data;
 
 <h2>{weather.getCityByName.name}, {weather.getCityByName.country}</h2>
 <p>Weather: {weather.getCityByName.weather.summary.description}</p>
+<style>
+	p,
+	h2 {
+		color: rgb(9, 1, 14);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		background-size: 160% 200%;
+		background-image: linear-gradient(90deg, #da62c4, #ef7b45ff);
+		margin-left: 4em;
+		font-weight: 800;
+	}
+</style>
