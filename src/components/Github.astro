@@ -64,14 +64,14 @@ if (json.errors) {
 				<div class="card-icons">
 					{data.homepageUrl && (
 						<div class="card-item">
-							<a href={data.homepageUrl}>
-								<Icon name="mdi:web" alt="Demo" width={25} />
+							<a href={data.homepageUrl} aria-label="To Demo page">
+								<Icon name="mdi:web" width={25} alt="Demo page" />
 							</a>
 						</div>
 					)}
 					<div class="card-item">
-						<a href={data.url}>
-							<Icon name="mdi:github" alt="Github" width={25} />
+						<a href={data.url} aria-label="Github repo">
+							<Icon name="mdi:github" alt="This in Github" width={25} />
 						</a>
 					</div>
 				</div>
