@@ -1,0 +1,128 @@
+---
+import { Icon } from 'astro-icon';
+import 'dotenv/config';
+const response = await fetch('https://api.github.com/graphql', {
+	method: 'POST',
+	headers: {
+		'Content-Type': 'application/json',
+		Authorization: `Bearer ${import.meta.env.GIT_BEARER_TOKEN}`
+	},
+	body: JSON.stringify({
+		query: `
+        query {
+				user(login: "jhalmu") {
+					avatarUrl
+					pinnedItems(first: 20, types: REPOSITORY) {
+						totalCount
+						nodes {
+							... on Repository {
+								id
+								name
+								createdAt
+								url
+								description
+								homepageUrl
+								isFork
+								languages(first: 10) {
+									nodes {
+										name
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+        `
+	})
+});
+
+const json = await response.json();
+const results = json.data;
+const image = (results.user.avatarUrl = Astro.props);
+const datax = results.user.pinnedItems.nodes;
+
+//const { image } = Astro.props;
+
+if (json.errors) {
+	console.log(json.errors);
+	throw new Error('Failed to fetch API');
+}
+---
+
+<h1 class="projekti-title">projektit</h1>
+<div class="card-wrapper">
+	{
+		datax.map((data: { name: String; description: String; homepageUrl: any; url: any }) => (
+			<div class="card">
+				<div class="card-title">
+					<h2>{data.name}</h2>
+				</div>
+				<div class="card-item">
+					<p>{data.description}</p>
+				</div>
+				<div class="card-icons">
+					{data.homepageUrl && (
+						<div class="card-item">
+							<a href={data.homepageUrl} aria-label="To Demo page">
+								<Icon name="mdi:web" width={25} alt="Demo page" />
+							</a>
+						</div>
+					)}
+					<div class="card-item">
+						<a href={data.url} aria-label="Github repo">
+							<Icon name="mdi:github" alt="This in Github" width={25} />
+						</a>
+					</div>
+				</div>
+			</div>
+		))
+	}
+</div>
+<style>
+	.card-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		min-width: 10em;
+		max-width: 80em;
+		gap: 2em;
+		justify-items: center;
+		z-index: 10;
+	}
+
+	.card {
+		max-height: fit-content;
+		min-width: 15em;
+		max-width: fit-content;
+		border: 2px dashed #bb9a6b;
+		border-radius: 10%;
+		padding: 2em;
+	}
+	.card:hover {
+		background-color: red;
+	}
+	.card-title {
+		font-variant: small-caps;
+		font-stretch: expanded;
+		margin-bottom: 0.5em;
+	}
+	.projekti-title {
+		font-size: var(--font-size-lg);
+		color: pink;
+	}
+	.card-icons {
+		margin-top: 1em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+	a {
+		display: block;
+		padding: 1em;
+	}
+	a:hover {
+		background-color: pink;
+		border-radius: 50%;
+	}
+</style>

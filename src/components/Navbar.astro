@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<nav class="navbar">
+	<ul class="nav-links">
+		<li class="nav-item">
+			<a href="/" aria-label="Back to frontpage"
+				><h1 class="h1 text-gradient">stackoverlove.me</h1>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/about" aria-label="About page" title="about"
+				><Icon name="mdi:about" width={25} />
+			</a>
+		</li>
+		<li class="nav-item">
+			<a
+				href="https://www.linkedin.com/in/juhahalmu"
+				title="LinkedIn"
+				aria-label="My LinkedIn Profile"
+				><Icon name="mdi:linkedin" alt="Me in LinkedIn" width={25} />
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="https://twitter.com/jhalmu" title="Twitter" aria-label="To my Twitter"
+				><Icon name="mdi:twitter" alt="Me in Twitter" width={25} />
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="https://github.com/jhalmu" title="GitHub" aria-label="To my Github"
+				><Icon name="mdi:github" alt="My Github page" width={25} />
+			</a>
+		</li>
+	</ul>
+</nav>
+<style>
+	marquee {
+		color: rgb(9, 1, 14);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		background-size: 160% 200%;
+		background-image: linear-gradient(90deg, #da62c4, #ef7b45ff);
+		margin-left: 4em;
+		font-weight: 800;
+	}
+</style>

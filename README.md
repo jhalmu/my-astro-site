@@ -1,3 +1,15 @@
+# Hello from DEV branch 
+## This is my journal
+**4.9.2022**
+- New face is started to shine
+- Added GraphQL github -thing from previous site here. Made api and component.
+- Hard work with css. It's a mess now. But in toolbox I have gradients and variables and reset. Maeby scss? 
+- Main branch have been now kind of starter template with several plugins. 
+- I was very slow to get thos GL things to work. Thankfully I had good examples. Next time I'm faster. 
+- I haven't added any Svelte or React or Vue addon. 
+- Have a nice day.
+
+
 # Welcome to [Astro](https://astro.build)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
@@ -5,7 +17,6 @@
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
 
 ## 🚀 Project Structure
 
