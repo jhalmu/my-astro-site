@@ -8,6 +8,8 @@
 - I was very slow to get thos GL things to work. Thankfully I had good examples. Next time I'm faster. 
 - I haven't added any Svelte or React or Vue addon. 
 - Have a nice day.
+## 10.9.2022 
+- Merded Dev to Main. Deploying ro Railway, 
 
 
 # Welcome to [Astro](https://astro.build)
